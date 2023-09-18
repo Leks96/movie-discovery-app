@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './movieDetails.css'
 
-function MovieDetails({ movie, onClose }) {
-    const { external_id } = useParams();
-    const [movies, setMovies] = useState(null);
+function MovieDetails() {
+    const { movie_id } = useParams();
+    const [movies, setMovies] = useState([]);
     const [error, setError] = useState('');
 
-    useEffect =(() => {
-      const API = 'https://api.themoviedb.org/3/find/${external_id}?api_key=7bcb426dacf86ce836cb83650f71cbbb'
+    const IMG = 'https://image.tmdb.org/t/p/w500/'
+
+    useEffect(() => {
+      const API = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=7bcb426dacf86ce836cb83650f71cbbb`;
 
       fetch(API)
       .then((res) => {
@@ -20,7 +23,7 @@ function MovieDetails({ movie, onClose }) {
       .catch((error) => setError(error.message))
     }, [])
 
-    if(!movie){
+    if(movies.length === 0){
       return <div>Loading...</div>;
     }
 
@@ -30,11 +33,12 @@ function MovieDetails({ movie, onClose }) {
 
   return (
     <div className='movie-details'>
-        <h2 data-testid="movie-title">{movie.title}</h2>
-        <p data-testid="movie-release-date">{movie.release_date}</p>
-        <p data-testid="movie-runtime">{movie.runtime}</p>
-        <p data-testid="movie-overview">{movie.overview}</p>
-        <button onClick={onClose}>Close</button>
+        <img src={IMG + movies.poster_path} alt='movie poster'/>
+        <h2 data-testid="movie-title">{movies.original_title}</h2>
+        <p data-testid="movie-release-date">{(new Date(movies.release_date).toUTCString()).slice(0, -4)}</p>
+        <p data-testid="movie-runtime">{movies.runtime}</p>
+        <p data-testid="movie-overview">{movies.overview}</p>
+        <button>Close</button>
     </div>
   )
 }

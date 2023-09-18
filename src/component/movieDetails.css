@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.movie-details img {
+    width: 65vw;
+    height: 50vh;
+    margin-left: 10%;
+}

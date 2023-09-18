@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: DM sans;
+    font-style: normal;
+}
+
+header {
+    background-image: url('images/Poster.png');
+    height: 90vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-image: url('images/Poster.png');
+}
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+}
+.logo p{
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    line-height: 24px;
+}
+.signIn {
+    display: inline-flex;
+    align-items: center;
+    gap: 27px;
+}
+.signIn p {
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    line-height: 24px; 
+}
+.signIn ion-icon{
+    color: #fff;
+    border-radius: 50%;
+    background-color: var(--rose-700, #BE123C);
+    padding: 6px;
+    width: 36px;
+    height: 36px;
+}
+.search {
+    display: inline-flex;
+    align-items: center;
+    justify-content: right;
+}
+.search input{
+    width: 200;
+    border: 2px solid var(--gray-300, #D1D5DB);
+    border-radius: 6px;
+    width: 525px;
+    padding: 6px 10px
+}
+.search ion-icon{
+    position: absolute;
+    margin-right: 10px;
+}
+section {
+    position: absolute;
+    top: 158px;
+    display: inline-flex;
+    margin-left: 98px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+section div h1 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #fff;
+    width: 404px;
+    margin-bottom: 16px;
+}
+.properties {
+    display: inline-flex;
+    margin-bottom: 16px;
+}
+.imdb {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-right: -200px;
+}
+.imdb p {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+}
+.pepper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.pepper p {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+}
+section p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #fff;
+    text-align: justify;
+    width: 302px;
+}
+.watch-btn {
+    margin-top: 16px;
+}
