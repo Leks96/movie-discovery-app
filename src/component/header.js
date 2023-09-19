@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './header.css';
+import './images'
 
 export default function Header() {
-    const [error, setError] = React.useState(null);
-    const [searchMovies, setSearchMovies] = React.useState('')
+    const [error, setError] = useState(null);
+    const [searchMovies, setSearchMovies] = useState('')
 
     const API = 'https://api.themoviedb.org/3/search/movie?api_key=7bcb426dacf86ce836cb83650f71cbbb&query='
 

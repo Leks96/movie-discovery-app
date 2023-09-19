@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'
 import './movieDetails.css'
 
 function MovieDetails() {
