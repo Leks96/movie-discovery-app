@@ -21,7 +21,8 @@ function App() {
       return res.json()
   })
     .then(data => {
-      setMovies(data.results);
+      const firstTen = data.results.slice(0, 10)
+      setMovies(firstTen);
       setLoading(false);
     })
     .catch((error) => {
