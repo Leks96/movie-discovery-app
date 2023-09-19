@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import './movieDetails.css'
 
 function MovieDetails() {
@@ -8,6 +8,8 @@ function MovieDetails() {
     const [error, setError] = useState('');
 
     const IMG = 'https://image.tmdb.org/t/p/w500/'
+
+    const history = useHistory();
 
     useEffect(() => {
       const API = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=7bcb426dacf86ce836cb83650f71cbbb`;
@@ -31,6 +33,10 @@ function MovieDetails() {
       return <div>Error: {error}</div>
     }
 
+    const backToHomepage = () => {
+      history.push('/')
+    }
+
   return (
     <div className='movie-details'>
         <img src={IMG + movies.poster_path} alt='movie poster'/>
@@ -38,7 +44,7 @@ function MovieDetails() {
         <p data-testid="movie-release-date">{(new Date(movies.release_date).toUTCString()).slice(0, -4)}</p>
         <p data-testid="movie-runtime">{movies.runtime}</p>
         <p data-testid="movie-overview">{movies.overview}</p>
-        <button>Close</button>
+        <button onClick={backToHomepage}>Close</button>
     </div>
   )
 }
