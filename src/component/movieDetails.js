@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router-dom'
-import './movieDetails.css'
+import { useParams, useNavigate } from 'react-router-dom';
+import './movieDetails.css';
 
 function MovieDetails() {
     const { movie_id } = useParams();
@@ -10,7 +9,7 @@ function MovieDetails() {
 
     const IMG = 'https://image.tmdb.org/t/p/w500/'
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(() => {
       const API = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=7bcb426dacf86ce836cb83650f71cbbb`;
@@ -35,7 +34,7 @@ function MovieDetails() {
     }
 
     const backToHomepage = () => {
-      history.push('/')
+      navigate('/')
     }
 
   return (

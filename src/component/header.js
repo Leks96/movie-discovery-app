@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './header.css';
-import './images'
+import imdb from './images/imdb image.png';
+import pepper from './images/Pepper.png';
+import tvImage from './images/tv image.png';
 
 export default function Header() {
     const [error, setError] = useState(null);
@@ -21,7 +23,7 @@ export default function Header() {
         <header>
           <div className="container">
             <div className="logo">
-              <img src="images/tv image.png" alt="logo" width="50px" height="50px" />
+              <img src={tvImage} alt="logo" width="50px" height="50px" />
               <p>Movie Box</p>
             </div>
             <form>
@@ -42,11 +44,11 @@ export default function Header() {
             <h1>John Wick 3: Parabellum</h1>
             <div className="properties">
               <div className="imdb">
-                <img src="images/imdb image.png" alt="imdb" height="17px" width="35px" />
+                <img src={imdb} alt="imdb" height="17px" width="35px" />
                 <p>86.0/100</p>
               </div>
               <div className="pepper">
-                <img src="images/Pepper.png" alt="Pepper" />
+                <img src={pepper} alt="Pepper" />
                 <p>97%</p>
               </div> 
             </div>
